@@ -21,5 +21,15 @@ async def ping(ctx):
 async def 困ったときは(ctx):
     await ctx.send('お互いさまさま')
 
+@tasks.loop(seconds=60)
+async def loop():
+    # 現在の時刻
+    now = datetime.now().strftime('%H:%M')
+    if now == '07:00':
+        channel = client.get_channel(CHANNEL_ID)
+        await channel.send('おはよう')  
+
+#ループ処理実行
+loop.start()
 
 bot.run(token)
