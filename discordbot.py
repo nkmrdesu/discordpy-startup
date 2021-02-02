@@ -33,7 +33,7 @@ async def loop():
     now = datetime.now().strftime('%H:%M')
     if now == '01:32':
         channel = client.get_channel(CHANNEL_ID)
-        await channel.send('やっほー騎士クン！おはよう！')  
+        await channel.send('やっほー！おはよー騎士くん！')  
 
 #ループ処理実行
 loop.start()
