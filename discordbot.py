@@ -1,4 +1,5 @@
 from discord.ext import commands
+from discord.ext import tasks
 import os
 import traceback
 
@@ -21,7 +22,7 @@ async def ping(ctx):
 async def 困ったときは(ctx):
     await ctx.send('お互いさまさま')
 
-@bot.loop(seconds=60)
+@tasks.loop(seconds=60)
 async def loop():
     # 現在の時刻
     now = datetime.now().strftime('%H:%M')
