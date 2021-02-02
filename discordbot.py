@@ -21,7 +21,7 @@ async def ping(ctx):
 async def 困ったときは(ctx):
     await ctx.send('お互いさまさま')
 
-@tasks.loop(seconds=60)
+@bot.loop(seconds=60)
 async def loop():
     # 現在の時刻
     now = datetime.now().strftime('%H:%M')
