@@ -1,5 +1,6 @@
 from discord.ext import commands
 from discord.ext import tasks
+from datetime import datetime
 import os
 import traceback
 
@@ -21,14 +22,18 @@ async def ping(ctx):
 @bot.command()
 async def 困ったときは(ctx):
     await ctx.send('お互いさまさま')
+    
+@bot.command()
+async def メンバー(ctx):
+    await ctx.send('メンバー一覧だよー！')
 
 @tasks.loop(seconds=60)
 async def loop():
     # 現在の時刻
     now = datetime.now().strftime('%H:%M')
-    if now == '01:20':
+    if now == '01:32':
         channel = client.get_channel(CHANNEL_ID)
-        await channel.send('おはよう')  
+        await channel.send('やっほー騎士クン！おはよう！')  
 
 #ループ処理実行
 loop.start()
