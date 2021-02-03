@@ -25,8 +25,8 @@ async def メンバー(ctx):
 @tasks.loop(seconds=60)
 async def loop():
     # 発言部
-    channel = bot.get_channel(CHANNEL_ID)
-    await channel.send('やっほー！おはよー騎士くん！')  
+    targetChannel = bot.get_channel(CHANNEL_ID)
+    await targetChannel.send('やっほー！おはよー騎士くん！')  
 
 #ループ処理実行
 loop.start()
