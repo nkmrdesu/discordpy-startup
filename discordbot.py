@@ -11,7 +11,7 @@ token = os.environ['DISCORD_BOT_TOKEN']
 targetChannnel = os.environ['TEST_CHANNEL']
 
 # 指定時間に走る処理
-async def SendMessage():
+async def sendMessage():
     channel = client.get_channel(targetChannnel)
     await channel.send('やっほー！おはよー騎士くん！')
 
@@ -20,7 +20,7 @@ async def SendMessage():
 async def time_check():
     sleepTime = 0
     # 現在の時刻
-    await SendMessage()
+    await sendMessage()
     #該当時間だった場合は２重に投稿しないよう３０秒余計に待機
 #     await asyncio.sleep(30)
 
