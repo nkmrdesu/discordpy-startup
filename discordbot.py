@@ -15,15 +15,14 @@ async def SendMessage():
     channel = client.get_channel(targetChannnel)
     await channel.send('やっほー！おはよー騎士くん！')
 
-# 30秒に一回ループ
-@tasks.loop(seconds=30)
+# 60秒に一回ループ
+@tasks.loop(seconds=60)
 async def time_check():
     sleepTime = 0
     # 現在の時刻
-    now = datetime.now().strftime('%Y/%m/%d %H:%M')
     await SendMessage()
     #該当時間だった場合は２重に投稿しないよう３０秒余計に待機
-    await asyncio.sleep(30)
+#     await asyncio.sleep(30)
 
 # メッセージ受信時に動作する処理
 @client.event
