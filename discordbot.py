@@ -13,6 +13,7 @@ targetChannnel = os.environ['TEST_CHANNEL']
 # 指定時間に走る処理
 async def sendMessage():
     channel = client.get_channel(targetChannnel)
+    print(channel)
     await channel.send('やっほー！おはよー騎士くん！')
 
 # 60秒に一回ループ
