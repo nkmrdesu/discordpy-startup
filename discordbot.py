@@ -30,11 +30,7 @@ async def メンバー(ctx):
 @tasks.loop(seconds=60)
 async def loop():
     # 現在の時刻
-    now = datetime.now().strftime('%H:%M')
-    if now == '01:32':
-        channel = client.get_channel(CHANNEL_ID)
-        await channel.send('やっほー！おはよー騎士くん！')  
-
+    await channel.send('やっほー！おはよー騎士くん！')  
 #ループ処理実行
 loop.start()
 
