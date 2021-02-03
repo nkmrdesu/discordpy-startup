@@ -8,11 +8,11 @@ import discord
 # 接続に必要なオブジェクトを生成
 client = discord.Client()
 token = os.environ['DISCORD_BOT_TOKEN']
-channnel = os.environ['TEST_CHANNEL']
+targetChannnel = os.environ['TEST_CHANNEL']
 
 # 指定時間に走る処理
 async def SendMessage():
-    channel = client.get_channel(CHANNEL_ID)
+    channel = client.get_channel(targetChannnel)
     await channel.send('やっほー！おはよー騎士くん！')
 
 # 30秒に一回ループ
