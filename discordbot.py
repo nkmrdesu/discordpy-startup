@@ -8,7 +8,14 @@ import discord
 # 接続に必要なオブジェクトを生成
 client = discord.Client()
 token = os.environ['DISCORD_BOT_TOKEN']
-targetChannnel = os.environ['TEST_CHANNEL']
+
+
+# 起動時の処理
+@client.event
+async def on_ready():
+    targetChannnel = os.environ['TEST_CHANNEL']
+    #ループ処理
+    loop.start()
 
 # 指定時間に走る処理
 async def sendMessage():
@@ -18,7 +25,7 @@ async def sendMessage():
 
 # 60秒に一回ループ
 @tasks.loop(seconds=60)
-async def time_check():
+async def loop():
     sleepTime = 0
     # 現在の時刻
     await sendMessage()
@@ -37,7 +44,5 @@ async def on_message(message):
     if message.content == 'メンバー取得':
         await message.channel.send('メンバー一覧だよー')
         
-#ループ処理
-time_check.start()
 #botの起動
 client.run(token)
