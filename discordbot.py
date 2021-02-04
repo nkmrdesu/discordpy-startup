@@ -9,7 +9,6 @@ import discord
 client = discord.Client()
 token = os.environ['DISCORD_BOT_TOKEN']
 channel_id = int(os.environ['TEST_CHANNEL'])
-channel = ''
 
 # 起動時の処理
 @client.event
@@ -21,14 +20,15 @@ async def on_ready():
 
 # 指定時間に走る処理
 async def sendMessage():
-    await channel.send('騎士くん、今は ' + datetime.now().strftime('%H:%M') + '時だよ')
+    channel = client.get_channel(channel_id)
+    await channel.send('騎士くん、今は ' + datetime.now().strftime('%H:%M') + 'だよ')
 
 # 60秒に一回ループ
 @tasks.loop(seconds=60)
 async def loop():
     # 現在の時刻
     now = datetime.now().strftime('%M')
-    if now == '07':
+    if now == '10':
         await sendMessage()
 
 
