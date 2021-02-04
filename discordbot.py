@@ -8,12 +8,12 @@ import discord
 # 接続に必要なオブジェクトを生成
 client = discord.Client()
 token = os.environ['DISCORD_BOT_TOKEN']
-
+targetChannnel = os.environ['TEST_CHANNEL']
 
 # 起動時の処理
 @client.event
 async def on_ready():
-    targetChannnel = os.environ['TEST_CHANNEL']
+   
     #ループ処理
     loop.start()
 
