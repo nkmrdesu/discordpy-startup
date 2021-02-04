@@ -14,27 +14,23 @@ channel_id = int(os.environ['TEST_CHANNEL'])
 # 起動時の処理
 @client.event
 async def on_ready():
-    #otameshi
     channel = client.get_channel(channel_id)
-    print('channelの存在確認')
-    print(channel)
-    print(channel_id)
-    await channel.send('やっほー！おはよー騎士くん！')
+    await channel.send('ヒヨリぼっと起動したよ。おはよう騎士くん！')
     #ループ処理
-#     loop.start()
+    loop.start()
 
 # 指定時間に走る処理
 async def sendMessage():
-    await channel.send('やっほー！おはよー騎士くん！')
+    await channel.send('騎士くん、今は ' + datetime.now().strftime(''%H:%M'') + '時だよ')
 
 # 60秒に一回ループ
 @tasks.loop(seconds=60)
 async def loop():
-    sleepTime = 0
     # 現在の時刻
+    now = datetime.now().strftime('%M')
+    if now == '00'
     await sendMessage()
-    #該当時間だった場合は２重に投稿しないよう３０秒余計に待機
-#     await asyncio.sleep(30)
+
 
 # メッセージ受信時に動作する処理
 @client.event
