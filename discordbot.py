@@ -12,6 +12,7 @@ targetChannnel = os.environ['TEST_CHANNEL']
 channel = client.get_channel(targetChannnel)
 print('channelの存在確認')
 print(channel)
+print(targetChannnel)
 
 # 起動時の処理
 @client.event
