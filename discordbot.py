@@ -8,14 +8,14 @@ import discord
 # 接続に必要なオブジェクトを生成
 client = discord.Client()
 token = os.environ['DISCORD_BOT_TOKEN']
-channel_id : int = os.environ['TEST_CHANNEL']
+channel_id = os.environ['TEST_CHANNEL']
 
 
 # 起動時の処理
 @client.event
 async def on_ready():
     #otameshi
-    channel = client.get_channel(channel_id)
+    channel = client.get_channel(806172678347817030)
     print('channelの存在確認')
     print(channel)
     print(channel_id)
