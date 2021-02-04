@@ -8,18 +8,17 @@ import discord
 # 接続に必要なオブジェクトを生成
 client = discord.Client()
 token = os.environ['DISCORD_BOT_TOKEN']
-targetChannel = os.environ['TEST_CHANNEL']
+channel_id = os.environ['TEST_CHANNEL']
 
 
 # 起動時の処理
 @client.event
 async def on_ready():
     #otameshi
-    await client.wait_until_ready()
-    channel = client.get_channel(targetChannel)
+    channel = client.get_channel(channel_id)
     print('channelの存在確認')
     print(channel)
-    print(targetChannel)
+    print(channel_id)
     await channel.send('やっほー！おはよー騎士くん！')
     #ループ処理
 #     loop.start()
