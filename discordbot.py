@@ -21,7 +21,7 @@ async def on_ready():
 
 # 指定時間に走る処理
 async def sendMessage():
-    await channel.send('騎士くん、今は ' + datetime.now().strftime(''%H:%M'') + '時だよ')
+    await channel.send('騎士くん、今は ' + datetime.now().strftime('%H:%M') + '時だよ')
 
 # 60秒に一回ループ
 @tasks.loop(seconds=60)
