@@ -24,7 +24,7 @@ async def on_ready():
 
 # 指定時間に走る処理
 async def sendMessage():
-    await client.send_message(channel, 'やっほー！おはよー騎士くん！')
+    await channel.send('やっほー！おはよー騎士くん！')
 
 # 60秒に一回ループ
 @tasks.loop(seconds=60)
