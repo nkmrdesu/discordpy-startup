@@ -17,8 +17,10 @@ print(targetChannel)
 # 起動時の処理
 @client.event
 async def on_ready():
+    #otameshi
+    await channel.send('やっほー！おはよー騎士くん！')
     #ループ処理
-    loop.start()
+#     loop.start()
 
 # 指定時間に走る処理
 async def sendMessage():
