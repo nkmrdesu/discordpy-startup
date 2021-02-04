@@ -9,6 +9,7 @@ import discord
 client = discord.Client()
 token = os.environ['DISCORD_BOT_TOKEN']
 targetChannnel = os.environ['TEST_CHANNEL']
+channel = client.get_channel(targetChannnel)
 
 # 起動時の処理
 @client.event
@@ -19,8 +20,6 @@ async def on_ready():
 
 # 指定時間に走る処理
 async def sendMessage():
-    channel = client.get_channel(targetChannnel)
-    print(channel)
     await channel.send('やっほー！おはよー騎士くん！')
 
 # 60秒に一回ループ
