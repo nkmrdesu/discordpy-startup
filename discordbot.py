@@ -28,8 +28,8 @@ async def sendMessage():
 async def loop():
     # 現在の時刻
     now = datetime.now().strftime('%M')
-    if now == '00'
-    await sendMessage()
+    if now == '00':
+        await sendMessage()
 
 
 # メッセージ受信時に動作する処理
