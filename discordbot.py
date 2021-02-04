@@ -8,7 +8,7 @@ import discord
 # 接続に必要なオブジェクトを生成
 client = discord.Client()
 token = os.environ['DISCORD_BOT_TOKEN']
-channel_id = os.environ['TEST_CHANNEL']
+channel_id : int = os.environ['TEST_CHANNEL']
 
 
 # 起動時の処理
